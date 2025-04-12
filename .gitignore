@@ -1,0 +1,26 @@
+# YOLO evaluation files
+yolo_evaluation/captured_frames/
+yolo_evaluation/**/*.jpg
+yolo_evaluation/temp_*.yaml
+yolo_evaluation/*_report.json
+
+# Model weights
+*.pt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
