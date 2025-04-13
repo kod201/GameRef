@@ -7,20 +7,54 @@ yolo_evaluation/*_report.json
 # Model weights
 *.pt
 
-# Python
+# Python bytecode
 __pycache__/
 *.py[cod]
 *$py.class
-.Python
-env/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
 venv/
+env/
 ENV/
 
-# IDE
+# Output directories and files
+output/
+*.wav
+*.mp3
+*.mp4
+*.ogg
+*.png
+*.jpg
+*.jpeg
+whisper_live_*/
+
+# Model files (large binary files)
+models/*.bin
+models/*.pt
+
+# IDE specific files
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# macOS
+# OS specific files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+
+# Temporary files
+tmp/
+temp/
