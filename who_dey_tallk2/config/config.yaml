@@ -1,0 +1,73 @@
+# Who Dey Tallk 2 Configuration
+
+# Video settings
+video:
+  enabled: true
+  device_id: 1 # ID of the video device (0 is usually the default camera)
+  width: 640
+  height: 480
+  fps: 30
+  lip_sync_verification: true
+
+# Audio settings
+audio:
+  device_id: null # null means use default audio device
+  sample_rate: 16000
+  chunk_duration: 1.0 # How many seconds of audio to process at once - Reduced from 3.0
+  voice_biometrics_enabled: true
+  # VAD Settings (webrtcvad)
+  vad_aggressiveness: 3 # 0 (least aggressive) to 3 (most aggressive)
+  vad_frame_duration_ms: 30 # VAD frame size in ms (10, 20, or 30)
+  transcription:
+    model: "tiny.en" # Whisper model to use (tiny.en, base.en, small.en, medium.en, large)
+    language: "en" # Language code
+
+# Face recognition settings
+face_recognition:
+  model_path: "models/yolov8n-face.pt" # Corrected back to the actual file found by fallback
+  known_faces_dir: "input/known_faces"
+  detection_threshold: 0.5 # Minimum confidence for face detection
+  recognition_threshold: 0.6 # Minimum confidence for face recognition
+
+# Lip sync detection settings
+lip_sync:
+  model_path: "models/lip_sync_model.pth" # Changed from .bin to .pth assuming PyTorch
+  threshold: 0.7 # Minimum confidence for lip sync detection
+
+# Voice biometrics settings
+voice_biometrics:
+  model_path: "models/voice_embedding_model.pt" # Changed from .bin to .pt assuming PyTorch
+  embeddings_path: "input/voice_embeddings"
+  threshold: 0.70 # Minimum confidence for voice recognition - Lowered from 0.75
+  # --- Added for automatic enrollment/enrichment ---
+  voice_enroll_known_face_enabled: true # Enroll voice if known face detected but voice unknown
+  voice_enrichment_enabled: true # Add new samples to existing voice embeddings
+  voice_enroll_enrich_interval_sec: 15.0 # Cooldown in seconds between attempts per person
+  # --- End Added ---
+
+# Speaker matching settings (decision engine)
+speaker_matching:
+  face_recognition_weight: 0.5 # Weight for face recognition evidence
+  lip_sync_weight: 0.3 # Weight for lip sync evidence
+  voice_biometrics_weight: 0.2 # Weight for voice biometrics evidence
+  min_confidence_threshold: 0.65 # Minimum confidence to identify a speaker
+  unknown_speaker_threshold: 0.45 # Below this is classified as unknown
+
+# Database settings
+database:
+  path: "database/conversations.db"
+  max_history_days: 30 # How many days of conversation history to keep
+
+# Monitoring settings
+monitoring:
+  enabled: true
+  refresh_rate: 1.0 # How often to update the monitoring display (seconds)
+  log_statistics: true
+  stats_update_interval: 60 # How often to log statistics (seconds)
+
+# Output settings
+output:
+  save_transcripts: true
+  transcript_path: "output/transcripts"
+  save_audio: false
+  audio_path: "output/audio"

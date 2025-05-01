@@ -1,0 +1,10 @@
+opencv-python
+numpy
+ultralytics
+# Add deepface for better recognition
+deepface
+speechbrain # Added for voice biometrics
+torch # Required by speechbrain
+torchaudio # Required by speechbrain for audio processing
+scikit-learn # For cosine_similarity
+mediapipe # For facial landmarks

@@ -58,3 +58,25 @@ Thumbs.db
 # Temporary files
 tmp/
 temp/
+
+# Biometric Data (Who Dey Tallk 2)
+who_dey_tallk2/input/known_faces/encodings.pickle
+who_dey_tallk2/input/voice_embeddings/
+
+# Speechbrain Pretrained Models (Downloaded)
+who_dey_tallk2/pretrained_models/
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Database files
+who_dey_tallk2/database/*.db
+
+# Output directories
+who_dey_tallk2/output/
+who_dey_tallk2/processing/
+
+# Build artifacts
+who_dey_tallk2/build/
