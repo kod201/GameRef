@@ -1,0 +1,30 @@
+# Biometric Data - Do not commit these
+input/known_faces/encodings.pickle
+input/known_faces/*.jpg
+input/known_faces/*.png
+input/voice_embeddings/
+pretrained_models/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database files
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+
+# Large model files
+models/*.bin
+models/*.pt
+models/*.pth
+models/*.onnx
+
+# Temporary files
+*.tmp
+.DS_Store
+
+# Output directories
+output/
+processing/temp/
